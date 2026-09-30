@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Pack 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, #ffd1e5 0 5%, transparent 25%),
+        radial-gradient(circle at 85% 80%, #d9ccff 0 5%, transparent 25%),
+        linear-gradient(135deg, #fff0f7, #eee9ff);
+
+    color: #49334f;
+}
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+.box {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 42px 25px;
+
+    border-radius: 32px;
+
+    background: rgba(255,255,255,.67);
+    backdrop-filter: blur(18px);
+
+    border: 2px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 25px 70px rgba(110,65,130,.18),
+        inset 0 0 30px rgba(255,255,255,.4);
+}
+
+h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+    border: none;
+    cursor: pointer;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    border-radius: 999px;
+
+    padding: 14px 30px;
+
+    transition: .3s ease;
+
+    box-shadow:
+        0 8px 25px rgba(70,40,90,.15);
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+#yesBtn {
+    background: linear-gradient(135deg,#ff66a9,#ff91c2);
+    color: white;
+}
+
+#noBtn {
+    background: white;
+    color: #777;
+}
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 100px;
+}
+
+.next-btn {
+    margin-top: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d72ff,
+            #b59cff
+        );
+
+    color: white;
+}
+
+
+/* ---------------- CUTE INTRO ---------------- */
+
+.cute {
+    font-size: 72px;
+
+    animation:
+        floating 2s ease-in-out infinite,
+        heartbeat 2s infinite;
+}
+
+@keyframes floating {
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    50% {
+        scale: 1.08;
+    }
+
+}
+
+
+/* ---------------- SPECIAL PACK ---------------- */
+
+.pack-area {
+    position: relative;
+}
+
+.pack-title {
+    font-size: clamp(34px,8vw,55px);
+
+    font-weight: 1000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f9a,
+            #ff8fbd,
+            #9b7cff,
+            #6f8cff,
+            #ff4f9a
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation:
+        rainbowText 4s linear infinite;
+}
+
+@keyframes rainbowText {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+
+}
+
+.pack-description {
+    margin-top: 8px;
+    color: #8b708f;
+}
+
+
+/* PACK CONTAINER */
+
+.pack-wrapper {
+    position: relative;
+
+    width: 280px;
+    height: 390px;
+
+    margin: 30px auto 10px;
+}
+
+
+/* Glow behind pack */
+
+.pack-glow {
+    position: absolute;
+
+    inset: 25px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff73b1,
+            #9d79ff,
+            #65cfff
+        );
+
+    filter: blur(35px);
+
+    opacity: .55;
+
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+
+    from {
+        transform: scale(.92);
+        opacity: .4;
+    }
+
+    to {
+        transform: scale(1.08);
+        opacity: .7;
+    }
+
+}
+
+
+/* ACTUAL PACK */
+
+.pack {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border: 5px solid white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff69ad,
+            #a06eff 55%,
+            #62baff
+        );
+
+    box-shadow:
+        0 25px 55px rgba(75,45,120,.3),
+        inset 0 0 40px rgba(255,255,255,.22);
+
+    transition: .4s;
+}
+
+.pack:hover {
+    transform:
+        translateY(-10px)
+        rotate(-2deg)
+        scale(1.03);
+}
+
+
+/* shine */
+
+.pack::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 500px;
+
+    background: rgba(255,255,255,.25);
+
+    transform: rotate(25deg);
+
+    left: -150px;
+    top: -60px;
+
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+
+    0% {
+        left: -150px;
+    }
+
+    50%,100% {
+        left: 380px;
+    }
+
+}
+
+
+/* stars */
+
+.pack-star {
+    position: absolute;
+
+    color: white;
+
+    font-size: 22px;
+
+    animation:
+        twinkle 1.5s infinite alternate;
+}
+
+.star1 {
+    top: 35px;
+    left: 35px;
+}
+
+.star2 {
+    top: 70px;
+    right: 35px;
+    animation-delay: .4s;
+}
+
+.star3 {
+    bottom: 70px;
+    left: 40px;
+    animation-delay: .8s;
+}
+
+.star4 {
+    bottom: 45px;
+    right: 45px;
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+
+    from {
+        opacity: .35;
+        transform: scale(.7) rotate(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+
+}
+
+
+/* pack content */
+
+.pack-content {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    z-index: 2;
+}
+
+.pack-main-title {
+
+    font-size: 40px;
+
+    font-weight: 1000;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        3px 4px 0 #7047a8,
+        0 0 20px rgba(255,255,255,.4);
+
+    transform: rotate(-4deg);
+}
+
+.pack-subtitle {
+
+    margin-top: 18px;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.2);
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.pack-heart {
+
+    font-size: 65px;
+
+    margin-top: 25px;
+
+    animation:
+        heartbeat 1.4s infinite;
+}
+
+.pack-open {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ---------------- CARDS ---------------- */
+
+.counter {
+
+    margin-bottom: 18px;
+
+    color: #92799a;
+
+    font-weight: bold;
+}
+
+.card-wrapper {
+
+    width: 290px;
+    height: 410px;
+
+    margin: auto;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+}
+
+.playing-card {
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .85s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+.playing-card.flipped {
+
+    transform:
+        rotateY(180deg);
+}
+
+.card-face {
+
+    position: absolute;
+
+    inset: 0;
+
+    backface-visibility: hidden;
+
+    border-radius: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 28px;
+
+    box-shadow:
+        0 25px 55px rgba(70,40,90,.25);
+}
+
+
+/* CARD BACK */
+
+.card-back {
+
+    border: 8px solid white;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.25) 2px,
+            transparent 3px
+        ),
+
+        linear-gradient(
+            135deg,
+            #ff65aa,
+            #9a6cff,
+            #62bfff
+        );
+
+    background-size:
+        22px 22px,
+        auto;
+
+    color: white;
+
+    font-size: 65px;
+}
+
+.card-back-small {
+
+    font-size: 14px;
+
+    margin-top: 15px;
+
+    letter-spacing: 2px;
+}
+
+
+/* CARD FRONT */
+
+.card-front {
+
+    transform: rotateY(180deg);
+
+    background:
+        linear-gradient(
+            160deg,
+            #ffffff,
+            #fff0f7
+        );
+
+    border: 5px solid #ff9bc4;
+
+    overflow: hidden;
+}
+
+.card-front::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #ffb5d5;
+
+    filter: blur(55px);
+
+    opacity: .35;
+
+    top: -50px;
+    right: -50px;
+}
+
+.card-front::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: #a994ff;
+
+    filter: blur(60px);
+
+    opacity: .25;
+
+    bottom: -50px;
+    left: -50px;
+}
+
+.card-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.card-emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation:
+        floating 2s infinite;
+}
+
+.message {
+
+    font-size: 27px;
+
+    line-height: 1.25;
+
+    font-weight: 1000;
+
+    color: #875174;
+}
+
+.extra-message {
+
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #8e738f;
+
+    max-width: 230px;
+}
+
+
+/* RARITY */
+
+.rarity {
+
+    margin-top: 22px;
+
+    font-size: 15px;
+
+    font-weight: 1000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3d8d,
+            #ff8b3d,
+            #ffe047,
+            #55d878,
+            #45bfff,
+            #8d62ff,
+            #ff3d8d
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    animation:
+        rainbowText 3s linear infinite;
+
+    text-shadow:
+        0 0 12px rgba(255,100,180,.25);
+}
+
+
+/* NEXT CARD */
+
+.next-card {
+
+    margin-top: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff65a9,
+            #a276ff
+        );
+
+    color: white;
+
+    display: none;
+}
+
+.next-card.show {
+
+    display: inline-block;
+
+    animation:
+        buttonPop .5s ease;
+}
+
+@keyframes buttonPop {
+
+    from {
+        transform: scale(.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* ---------------- SPARKLES ---------------- */
+
+.sparkle {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    font-size: 20px;
+
+    z-index: 100;
+
+    animation:
+        fall 4s linear forwards;
+}
+
+@keyframes fall {
+
+    from {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px) {
+
+    .card-wrapper {
+        width: 245px;
+        height: 350px;
+    }
+
+    .pack-wrapper {
+        width: 240px;
+        height: 335px;
+    }
+
+    .message {
+        font-size: 23px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<section id="page1" class="page active">
+
+<div class="box">
+
+    <div class="cute">
+        ૮ ˶ᵔ ᵕ ᵔ˶ ა
+    </div>
+
+    <h1>
+        One Little Question... 💗
+    </h1>
+
+    <p>
+        Are you happy with our relationship? 🥺👉👈
+    </p>
+
+    <div class="buttons">
+
+        <button id="yesBtn" onclick="accept()">
+            YES 💗
+        </button>
+
+        <button id="noBtn" onclick="nope()">
+            NO 🙄
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE 2 -->
+
+<section id="page2" class="page">
+
+<div class="box">
+
+    <div class="knife">
+        🔪🙂
+    </div>
+
+    <h1>
+        I Knew It Already 😌
+    </h1>
+
+    <p>
+        Welcome to our little corner 💗
+        <br><br>
+        I made something special just for you...
+    </p>
+
+    <button
+        class="next-btn"
+        onclick="goToPack()"
+    >
+        NEXT ✨
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- SPECIAL PACK -->
+
+<section id="page3" class="page">
+
+<div class="box pack-area">
+
+    <div class="pack-title">
+        SPECIAL PACK ✨
+    </div>
+
+    <p class="pack-description">
+        A little collection of things
+        you deserve to hear 💗
+    </p>
+
+
+    <div class="pack-wrapper">
+
+        <div class="pack-glow"></div>
+
+        <div
+            class="pack"
+            onclick="openPack()"
+        >
+
+            <div class="pack-star star1">
+                ✦
+            </div>
+
+            <div class="pack-star star2">
+                ✧
+            </div>
+
+            <div class="pack-star star3">
+                ✦
+            </div>
+
+            <div class="pack-star star4">
+                ✧
+            </div>
+
+
+            <div class="pack-content">
+
+                <div class="pack-main-title">
+                    SPECIAL
+                </div>
+
+                <div class="pack-main-title">
+                    PACK
+                </div>
+
+                <div class="pack-subtitle">
+                    LIMITED EDITION
+                </div>
+
+                <div class="pack-heart">
+                    💗
+                </div>
+
+                <div class="pack-open">
+                    TAP TO OPEN ✨
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- CARD PAGE -->
+
+<section id="page4" class="page">
+
+<div class="box">
+
+    <div
+        class="counter"
+        id="counter"
+    >
+        CARD 1 / 3
+    </div>
+
+
+    <div
+        class="card-wrapper"
+        onclick="flipCard()"
+    >
+
+        <div
+            id="playingCard"
+            class="playing-card"
+        >
+
+            <!-- BACK -->
+
+            <div class="card-face card-back">
+
+                💗
+
+                <div class="card-back-small">
+                    FLIP ME ✨
+                </div>
+
+            </div>
+
+
+            <!-- FRONT -->
+
+            <div class="card-face card-front">
+
+                <div class="card-content">
+
+                    <div
+                        class="card-emoji"
+                        id="cardEmoji"
+                    >
+                        💗
+                    </div>
+
+
+                    <div
+                        class="message"
+                        id="cardMessage"
+                    >
+                        You Are My Favorite Person
+                    </div>
+
+
+                    <div
+                        class="extra-message"
+                        id="cardExtra"
+                    >
+                        You have such a beautiful heart,
+                        and somehow you always make
+                        everything feel a little better. 💕
+                    </div>
+
+
+                    <div
+                        class="rarity"
+                        id="cardRarity"
+                    >
+                        ✦ RARITY: 0.01 ✦
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        id="nextCardBtn"
+        class="next-card"
+        onclick="nextCard()"
+    >
+        NEXT CARD ✨
+    </button>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+let noClicks = 0;
+
+let currentCard = 0;
+
+let flipped = false;
+
+
+/* CARDS */
+
+const cards = [
+
+    {
+        emoji: "💗",
+
+        message:
+            "You Are My Favorite Person",
+
+        extra:
+            "You have such a beautiful heart, and somehow you always make everything feel a little better. You are genuinely one of a kind. 💕",
+
+        rarity:
+            "0.01"
+    },
+
+
+    {
+        emoji: "👯‍♀️",
+
+        message:
+            "TWINS FOREVER",
+
+        extra:
+            "You match with me almost everything — even the vibe. Same energy, same chaos, same random thoughts... it honestly feels illegal how similar we are. 😭💗",
+
+        rarity:
+            "0.0001"
+    },
+
+
+    {
+        emoji: "🌎💗",
+
+        message:
+            "U R MY OWN WORLD",
+
+        extra:
+            "You are more than just a person I talk to. You are one of those rare souls that make life feel warmer, brighter, and so much more special. 🌎✨",
+
+        rarity:
+            "0.0000001"
+    }
+
+];
+
+
+
+/* PAGE SWITCH */
+
+function showPage(id) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+}
+
+
+
+/* NO BUTTON */
+
+function nope() {
+
+    noClicks++;
+
+
+    const btn =
+        document.getElementById("noBtn");
+
+
+    const scale =
+        Math.max(
+            .12,
+            1 - noClicks * .15
+        );
+
+
+    btn.style.transform =
+        `scale(${scale})`;
+
+
+    const maxX =
+        Math.min(
+            180,
+            window.innerWidth / 2 - 80
+        );
+
+
+    const maxY =
+        Math.min(
+            180,
+            window.innerHeight / 2 - 80
+        );
+
+
+    const x =
+        Math.random() * maxX * 2 - maxX;
+
+
+    const y =
+        Math.random() * maxY * 2 - maxY;
+
+
+    btn.style.position = "fixed";
+
+
+    btn.style.left =
+        `calc(50% + ${x}px)`;
+
+
+    btn.style.top =
+        `calc(50% + ${y}px)`;
+
+
+    createSparkles();
+
+
+    if(noClicks >= 3) {
+
+        btn.innerText =
+            "Really? 😭";
+
+    }
+
+
+    if(noClicks >= 6) {
+
+        btn.innerText =
+            "Stop 😭💗";
+
+    }
+
+}
+
+
+
+/* YES */
+
+function accept() {
+
+    createSparkles();
+
+
+    setTimeout(() => {
+
+        showPage("page2");
+
+    }, 400);
+
+}
+
+
+
+/* NEXT */
+
+function goToPack() {
+
+    showPage("page3");
+
+}
+
+
+
+/* OPEN PACK */
+
+function openPack() {
+
+    createSparkles();
+
+    setTimeout(() => {
+
+        showPage("page4");
+
+    }, 350);
+
+}
+
+
+
+/* FLIP */
+
+function flipCard() {
+
+    if(flipped)
+        return;
+
+
+    flipped = true;
+
+
+    document
+        .getElementById("playingCard")
+        .classList.add("flipped");
+
+
+    document
+        .getElementById("nextCardBtn")
+        .classList.add("show");
+
+
+    createSparkles();
+
+}
+
+
+
+/* NEXT CARD */
+
+function nextCard() {
+
+    if(!flipped)
+        return;
+
+
+    currentCard++;
+
+
+    if(currentCard >= cards.length) {
+
+        showFinal();
+
+        return;
+
+    }
+
+
+    flipped = false;
+
+
+    const card =
+        cards[currentCard];
+
+
+    document
+        .getElementById("playingCard")
+        .classList.remove("flipped");
+
+
+    document
+        .getElementById("counter")
+        .innerText =
+        `CARD ${currentCard + 1} / ${cards.length}`;
+
+
+    document
+        .getElementById("cardEmoji")
+        .innerText =
+        card.emoji;
+
+
+    document
+        .getElementById("cardMessage")
+        .innerText =
+        card.message;
+
+
+    document
+        .getElementById("cardExtra")
+        .innerText =
+        card.extra;
+
+
+    document
+        .getElementById("cardRarity")
+        .innerText =
+        `✦ RARITY: ${card.rarity} ✦`;
+
+
+    document
+        .getElementById("nextCardBtn")
+        .classList.remove("show");
+
+
+    createSparkles();
+
+}
+
+
+
+/* FINAL */
+
+function showFinal() {
+
+    document
+        .querySelector("#page4 .box")
+        .innerHTML = `
+
+        <div style="font-size:80px;">
+            🫂💗
+        </div>
+
+        <h1>
+            That's All...
+        </h1>
+
+        <p>
+            But the rarest card
+            <br>
+            was our friendship all along. 💗
+        </p>
+
+        <p style="margin-top:20px;">
+            Love You, Bestie ✨
+        </p>
+
+    `;
+
+
+    createSparkles();
+
+    createSparkles();
+
+    createSparkles();
+
+}
+
+
+
+/* SPARKLES */
+
+function createSparkles() {
+
+    const symbols = [
+        "✨",
+        "💗",
+        "🌸",
+        "⭐",
+        "🎀"
+    ];
+
+
+    for(let i = 0; i < 10; i++) {
+
+        const el =
+            document.createElement("div");
+
+
+        el.className =
+            "sparkle";
+
+
+        el.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        el.style.left =
+            Math.random() * 100 + "vw";
+
+
+        el.style.top =
+            "-30px";
+
+
+        el.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+
+        document.body.appendChild(el);
+
+
+        setTimeout(() => {
+
+            el.remove();
+
+        }, 5000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
