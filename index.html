@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
 <title>Special Pack 💗</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -141,19 +143,15 @@ button:hover {
 }
 
 @keyframes floating {
-
     50% {
         transform: translateY(-10px) rotate(4deg);
     }
-
 }
 
 @keyframes heartbeat {
-
     50% {
         scale: 1.08;
     }
-
 }
 
 
@@ -298,7 +296,6 @@ button:hover {
 /* shine */
 
 .pack::after {
-
     content: "";
 
     position: absolute;
@@ -454,7 +451,6 @@ button:hover {
     font-weight: bold;
 
     letter-spacing: 1px;
-
 }
 
 
@@ -533,7 +529,6 @@ button:hover {
     border: 8px solid white;
 
     background:
-
         radial-gradient(
             circle,
             rgba(255,255,255,.25) 2px,
@@ -751,6 +746,385 @@ button:hover {
 }
 
 
+/* ================================================= */
+/*                 10 THINGS PAGE                    */
+/* ================================================= */
+
+.things-box {
+    max-width: 850px;
+    padding: 35px 25px;
+}
+
+.things-title {
+
+    font-size: clamp(32px, 7vw, 48px);
+
+    margin-bottom: 8px;
+
+    font-weight: 1000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f9a,
+            #ff86b8,
+            #9b7cff,
+            #63c7ff,
+            #ff4f9a
+        );
+
+    background-size: 300% 300%;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        cuteGradient 5s ease infinite;
+}
+
+.things-subtitle {
+
+    color: #a07c9d;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+
+    animation:
+        softFloat 3s ease-in-out infinite;
+}
+
+
+/* 5 فوق + 5 تحت */
+
+.things-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 14px;
+
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+}
+
+
+/* THING CARD */
+
+.thing-card {
+
+    position: relative;
+
+    min-height: 86px;
+
+    padding: 18px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    cursor: default;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.90),
+            rgba(255,235,247,.72)
+        );
+
+    border: 2px solid rgba(255,145,195,.45);
+
+    box-shadow:
+        0 10px 25px rgba(173,90,150,.12),
+        inset 0 0 20px rgba(255,255,255,.65);
+
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+/* Different soft colors */
+
+.thing-card:nth-child(2n) {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.90),
+            rgba(238,232,255,.75)
+        );
+}
+
+.thing-card:nth-child(3n) {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.90),
+            rgba(225,247,255,.75)
+        );
+}
+
+
+/* Hover */
+
+.thing-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(-1deg)
+        scale(1.025);
+
+    border-color:
+        rgba(255,105,170,.75);
+
+    box-shadow:
+        0 18px 38px rgba(180,80,160,.20),
+        0 0 25px rgba(255,145,205,.18);
+}
+
+.thing-card:nth-child(even):hover {
+
+    transform:
+        translateY(-7px)
+        rotate(1deg)
+        scale(1.025);
+}
+
+
+/* Glow circle */
+
+.thing-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    right: -25px;
+    bottom: -30px;
+
+    background:
+        rgba(255,155,205,.22);
+
+    transition: .5s ease;
+}
+
+.thing-card:hover::before {
+
+    transform:
+        scale(2.3);
+}
+
+
+/* Title */
+
+.thing-title {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 15px;
+
+    font-weight: 1000;
+
+    color: #875174;
+
+    transition: .3s ease;
+}
+
+.thing-card:hover .thing-title {
+
+    color: #e54891;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* Hidden details */
+
+.thing-details {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 8px;
+    right: 8px;
+
+    bottom: 8px;
+
+    padding: 8px 7px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    backdrop-filter:
+        blur(8px);
+
+    color: #8e738f;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+
+    opacity: 0;
+
+    transform:
+        translateY(8px)
+        scale(.96);
+
+    pointer-events: none;
+
+    transition:
+        opacity .3s ease,
+        transform .35s ease;
+}
+
+
+/* Show details on hover */
+
+.thing-card:hover .thing-details {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* Little heart */
+
+.thing-heart {
+
+    position: absolute;
+
+    z-index: 3;
+
+    right: 7px;
+    top: 6px;
+
+    font-size: 15px;
+
+    opacity: .55;
+
+    animation:
+        heartFloat 2.2s ease-in-out infinite;
+}
+
+.thing-card:hover .thing-heart {
+
+    animation:
+        heartPop .55s ease-in-out infinite alternate;
+}
+
+
+/* 10 THINGS ANIMATIONS */
+
+@keyframes cuteGradient {
+
+    0%,100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes softFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes heartFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(8deg);
+    }
+}
+
+@keyframes heartPop {
+
+    from {
+        transform:
+            scale(1)
+            rotate(-10deg);
+    }
+
+    to {
+        transform:
+            scale(1.35)
+            rotate(10deg);
+    }
+}
+
+
+/* ================================================= */
+/*                    FINAL PAGE                     */
+/* ================================================= */
+
+.final-box {
+
+    animation:
+        finalAppear .8s ease;
+}
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.85) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
 /* ---------------- SPARKLES ---------------- */
 
 .sparkle {
@@ -770,6 +1144,7 @@ button:hover {
 @keyframes fall {
 
     from {
+
         transform:
             translateY(-30px)
             rotate(0deg);
@@ -778,35 +1153,103 @@ button:hover {
     }
 
     to {
+
         transform:
             translateY(110vh)
             rotate(360deg);
 
         opacity: 0;
     }
-
 }
 
 
-/* MOBILE */
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:800px) {
+
+    .things-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        max-height: 62vh;
+
+        overflow-y: auto;
+
+        padding: 4px;
+    }
+
+    .things-box {
+
+        max-width: 650px;
+
+        padding:
+            30px 18px;
+    }
+
+    .thing-card {
+
+        min-height: 80px;
+    }
+
+}
 
 @media(max-width:500px) {
 
     .card-wrapper {
+
         width: 245px;
         height: 350px;
     }
 
     .pack-wrapper {
+
         width: 240px;
         height: 335px;
     }
 
     .message {
+
         font-size: 23px;
     }
 
+    .things-title {
+
+        font-size: 32px;
+    }
+
+    .things-subtitle {
+
+        font-size: 13px;
+    }
+
+    .things-grid {
+
+        gap: 9px;
+
+        max-height: 58vh;
+    }
+
+    .thing-card {
+
+        min-height: 75px;
+
+        padding:
+            14px 7px;
+    }
+
+    .thing-title {
+
+        font-size: 13px;
+    }
+
+    .thing-details {
+
+        font-size: 10px;
+    }
+
 }
+
 </style>
 </head>
 
@@ -814,7 +1257,9 @@ button:hover {
 <body>
 
 
-<!-- PAGE 1 -->
+<!-- ================================================= -->
+<!--                    PAGE 1                         -->
+<!-- ================================================= -->
 
 <section id="page1" class="page active">
 
@@ -834,11 +1279,17 @@ button:hover {
 
     <div class="buttons">
 
-        <button id="yesBtn" onclick="accept()">
+        <button
+            id="yesBtn"
+            onclick="accept()"
+        >
             YES 💗
         </button>
 
-        <button id="noBtn" onclick="nope()">
+        <button
+            id="noBtn"
+            onclick="nope()"
+        >
             NO 🙄
         </button>
 
@@ -850,13 +1301,15 @@ button:hover {
 
 
 
-<!-- PAGE 2 -->
+<!-- ================================================= -->
+<!--                    PAGE 2                         -->
+<!-- ================================================= -->
 
 <section id="page2" class="page">
 
 <div class="box">
 
-    <div class="knife">
+    <div class="cute">
         🔪🙂
     </div>
 
@@ -865,9 +1318,13 @@ button:hover {
     </h1>
 
     <p>
+
         Welcome to our little corner 💗
+
         <br><br>
+
         I made something special just for you...
+
     </p>
 
     <button
@@ -883,7 +1340,9 @@ button:hover {
 
 
 
-<!-- SPECIAL PACK -->
+<!-- ================================================= -->
+<!--                 SPECIAL PACK                      -->
+<!-- ================================================= -->
 
 <section id="page3" class="page">
 
@@ -894,8 +1353,10 @@ button:hover {
     </div>
 
     <p class="pack-description">
+
         A little collection of things
         you deserve to hear 💗
+
     </p>
 
 
@@ -959,7 +1420,10 @@ button:hover {
 
 
 
-<!-- CARD PAGE -->
+<!-- ================================================= -->
+<!--                    PAGE 4                         -->
+<!--                  CARD PAGE                        -->
+<!-- ================================================= -->
 
 <section id="page4" class="page">
 
@@ -982,6 +1446,7 @@ button:hover {
             id="playingCard"
             class="playing-card"
         >
+
 
             <!-- BACK -->
 
@@ -1058,7 +1523,293 @@ button:hover {
 
 
 
+<!-- ================================================= -->
+<!--                  PAGE 5                           -->
+<!--              10 THINGS I LOVE                     -->
+<!-- ================================================= -->
+
+<section id="page5" class="page">
+
+<div class="box things-box">
+
+
+    <div class="things-title">
+        10 Things I Love About U 💗
+    </div>
+
+
+    <p class="things-subtitle">
+        Hover over each one... ✨
+    </p>
+
+
+    <div class="things-grid">
+
+
+        <!-- 1 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Laugh 😂
+            </div>
+
+            <div class="thing-details">
+                Your laugh is honestly contagious.
+                It always makes me smile without
+                even trying.
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Personality ✨
+            </div>
+
+            <div class="thing-details">
+                I love the way you are.
+                You have your own vibe, and that's
+                what makes you special to me.
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Attention 🫶
+            </div>
+
+            <div class="thing-details">
+                I love how you care about the little
+                things and make me feel like I matter.
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Eyes 👀
+            </div>
+
+            <div class="thing-details">
+                There is just something about your
+                eyes that I could never get tired of.
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Voice 💕
+            </div>
+
+            <div class="thing-details">
+                Even when you're talking about
+                something random, I still love
+                listening to you.
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Soft Heart 🥹
+            </div>
+
+            <div class="thing-details">
+                Your caring side is one of the cutest
+                things about you. It makes me feel
+                safe around you.
+            </div>
+
+        </div>
+
+
+        <!-- 7 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Cuteness 🌷
+            </div>
+
+            <div class="thing-details">
+                You have this natural cuteness that
+                appears even when you're not trying
+                at all.
+            </div>
+
+        </div>
+
+
+        <!-- 8 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Little Details 🎀
+            </div>
+
+            <div class="thing-details">
+                The tiny things you do are sometimes
+                the exact things I end up remembering
+                the most.
+            </div>
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Your Presence 🫂
+            </div>
+
+            <div class="thing-details">
+                Sometimes you don't even have to say
+                anything. Just having you around
+                makes things better.
+            </div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="thing-card">
+
+            <div class="thing-heart">
+                ♡
+            </div>
+
+            <div class="thing-title">
+                Just You ❤️
+            </div>
+
+            <div class="thing-details">
+                At the end of the day, I love you simply
+                for being you. That's my favorite thing
+                about you.
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="next-btn"
+        onclick="showFinal()"
+        style="margin-top:22px;"
+    >
+        That's All... 💗
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!--                  PAGE 6                           -->
+<!--                    FINAL                          -->
+<!-- ================================================= -->
+
+<section id="page6" class="page">
+
+<div class="box final-box">
+
+    <div style="font-size:80px;">
+        🫂💗
+    </div>
+
+    <h1>
+        That's All...
+    </h1>
+
+    <p>
+        But the rarest card
+        <br>
+        was our friendship all along. 💗
+    </p>
+
+    <p style="margin-top:20px;">
+        Love You, Bestie ✨
+    </p>
+
+</div>
+
+</section>
+
+
+
 <script>
+
+
+/* ================================================= */
+/*                    VARIABLES                      */
+/* ================================================= */
 
 let noClicks = 0;
 
@@ -1067,7 +1818,10 @@ let currentCard = 0;
 let flipped = false;
 
 
-/* CARDS */
+
+/* ================================================= */
+/*                      CARDS                        */
+/* ================================================= */
 
 const cards = [
 
@@ -1116,7 +1870,9 @@ const cards = [
 
 
 
-/* PAGE SWITCH */
+/* ================================================= */
+/*                  PAGE SWITCH                      */
+/* ================================================= */
 
 function showPage(id) {
 
@@ -1137,7 +1893,9 @@ function showPage(id) {
 
 
 
-/* NO BUTTON */
+/* ================================================= */
+/*                    NO BUTTON                      */
+/* ================================================= */
 
 function nope() {
 
@@ -1181,7 +1939,8 @@ function nope() {
         Math.random() * maxY * 2 - maxY;
 
 
-    btn.style.position = "fixed";
+    btn.style.position =
+        "fixed";
 
 
     btn.style.left =
@@ -1214,7 +1973,9 @@ function nope() {
 
 
 
-/* YES */
+/* ================================================= */
+/*                       YES                         */
+/* ================================================= */
 
 function accept() {
 
@@ -1231,7 +1992,9 @@ function accept() {
 
 
 
-/* NEXT */
+/* ================================================= */
+/*                       NEXT                        */
+/* ================================================= */
 
 function goToPack() {
 
@@ -1241,11 +2004,14 @@ function goToPack() {
 
 
 
-/* OPEN PACK */
+/* ================================================= */
+/*                    OPEN PACK                      */
+/* ================================================= */
 
 function openPack() {
 
     createSparkles();
+
 
     setTimeout(() => {
 
@@ -1257,7 +2023,9 @@ function openPack() {
 
 
 
-/* FLIP */
+/* ================================================= */
+/*                       FLIP                        */
+/* ================================================= */
 
 function flipCard() {
 
@@ -1284,7 +2052,9 @@ function flipCard() {
 
 
 
-/* NEXT CARD */
+/* ================================================= */
+/*                    NEXT CARD                      */
+/* ================================================= */
 
 function nextCard() {
 
@@ -1295,9 +2065,13 @@ function nextCard() {
     currentCard++;
 
 
+    /* بعد آخر بطاقة نروح لـ 10 Things */
+
     if(currentCard >= cards.length) {
 
-        showFinal();
+        showPage("page5");
+
+        createSparkles();
 
         return;
 
@@ -1357,34 +2131,13 @@ function nextCard() {
 
 
 
-/* FINAL */
+/* ================================================= */
+/*                      FINAL                        */
+/* ================================================= */
 
 function showFinal() {
 
-    document
-        .querySelector("#page4 .box")
-        .innerHTML = `
-
-        <div style="font-size:80px;">
-            🫂💗
-        </div>
-
-        <h1>
-            That's All...
-        </h1>
-
-        <p>
-            But the rarest card
-            <br>
-            was our friendship all along. 💗
-        </p>
-
-        <p style="margin-top:20px;">
-            Love You, Bestie ✨
-        </p>
-
-    `;
-
+    showPage("page6");
 
     createSparkles();
 
@@ -1396,16 +2149,20 @@ function showFinal() {
 
 
 
-/* SPARKLES */
+/* ================================================= */
+/*                    SPARKLES                       */
+/* ================================================= */
 
 function createSparkles() {
 
     const symbols = [
+
         "✨",
         "💗",
         "🌸",
         "⭐",
         "🎀"
+
     ];
 
 
@@ -1440,7 +2197,9 @@ function createSparkles() {
             (2 + Math.random() * 3) + "s";
 
 
-        document.body.appendChild(el);
+        document
+            .body
+            .appendChild(el);
 
 
         setTimeout(() => {
@@ -1457,3 +2216,4 @@ function createSparkles() {
 
 </body>
 </html>
+```
