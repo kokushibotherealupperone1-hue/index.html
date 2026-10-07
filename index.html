@@ -213,9 +213,6 @@ button:hover {
     margin: 30px auto 10px;
 }
 
-
-/* Glow behind pack */
-
 .pack-glow {
     position: absolute;
 
@@ -251,9 +248,6 @@ button:hover {
     }
 
 }
-
-
-/* ACTUAL PACK */
 
 .pack {
     position: relative;
@@ -291,9 +285,6 @@ button:hover {
         scale(1.03);
 }
 
-
-/* shine */
-
 .pack::after {
     content: "";
 
@@ -323,9 +314,6 @@ button:hover {
     }
 
 }
-
-
-/* stars */
 
 .pack-star {
     position: absolute;
@@ -374,9 +362,6 @@ button:hover {
     }
 
 }
-
-
-/* pack content */
 
 .pack-content {
 
@@ -520,9 +505,6 @@ button:hover {
         0 25px 55px rgba(70,40,90,.25);
 }
 
-
-/* CARD BACK */
-
 .card-back {
 
     border: 8px solid white;
@@ -558,9 +540,6 @@ button:hover {
 
     letter-spacing: 2px;
 }
-
-
-/* CARD FRONT */
 
 .card-front {
 
@@ -667,9 +646,6 @@ button:hover {
     max-width: 230px;
 }
 
-
-/* RARITY */
-
 .rarity {
 
     margin-top: 22px;
@@ -702,9 +678,6 @@ button:hover {
     text-shadow:
         0 0 12px rgba(255,100,180,.25);
 }
-
-
-/* NEXT CARD */
 
 .next-card {
 
@@ -796,9 +769,6 @@ button:hover {
         softFloat 3s ease-in-out infinite;
 }
 
-
-/* 5 فوق + 5 تحت */
-
 .things-grid {
 
     display: grid;
@@ -814,9 +784,6 @@ button:hover {
 
     margin: 0 auto;
 }
-
-
-/* THING CARD */
 
 .thing-card {
 
@@ -859,9 +826,6 @@ button:hover {
         border-color .35s ease;
 }
 
-
-/* Different soft colors */
-
 .thing-card:nth-child(2n) {
 
     background:
@@ -881,9 +845,6 @@ button:hover {
             rgba(225,247,255,.75)
         );
 }
-
-
-/* Hover */
 
 .thing-card:hover {
 
@@ -907,9 +868,6 @@ button:hover {
         rotate(1deg)
         scale(1.025);
 }
-
-
-/* Glow circle */
 
 .thing-card::before {
 
@@ -937,9 +895,6 @@ button:hover {
         scale(2.3);
 }
 
-
-/* Title */
-
 .thing-title {
 
     position: relative;
@@ -963,9 +918,6 @@ button:hover {
         translateY(-3px);
 }
 
-
-/* Hidden details */
-
 .thing-details {
 
     position: absolute;
@@ -982,7 +934,7 @@ button:hover {
     border-radius: 12px;
 
     background:
-        rgba(255,255,255,.97);
+        rgba(255,255,255,.95);
 
     backdrop-filter:
         blur(8px);
@@ -1006,9 +958,6 @@ button:hover {
         transform .35s ease;
 }
 
-
-/* Show details on hover */
-
 .thing-card:hover .thing-details {
 
     opacity: 1;
@@ -1017,9 +966,6 @@ button:hover {
         translateY(0)
         scale(1);
 }
-
-
-/* Little heart */
 
 .thing-heart {
 
@@ -1043,9 +989,6 @@ button:hover {
     animation:
         heartPop .55s ease-in-out infinite alternate;
 }
-
-
-/* 10 THINGS ANIMATIONS */
 
 @keyframes cuteGradient {
 
@@ -1097,6 +1040,72 @@ button:hover {
             scale(1.35)
             rotate(10deg);
     }
+}
+
+
+/* ================================================= */
+/*              LOVE LETTER PAGE                     */
+/* ================================================= */
+
+.letter-box {
+
+    max-width: 760px;
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 38px 30px;
+}
+
+.letter-title {
+
+    font-size: clamp(30px, 7vw, 45px);
+
+    font-weight: 1000;
+
+    margin-bottom: 25px;
+
+    color: #875174;
+}
+
+.letter-content {
+
+    color: #6f596f;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    text-align: left;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.letter-paragraph {
+
+    margin-bottom: 30px;
+}
+
+.letter-paragraph:last-child {
+
+    margin-bottom: 0;
+}
+
+.letter-next {
+
+    margin-top: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff65a9,
+            #a276ff
+        );
+
+    color: white;
 }
 
 
@@ -1191,6 +1200,21 @@ button:hover {
         min-height: 80px;
     }
 
+    .letter-box {
+
+        max-height: 90vh;
+
+        padding:
+            30px 20px;
+    }
+
+    .letter-content {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
 }
 
 @media(max-width:500px) {
@@ -1247,11 +1271,22 @@ button:hover {
         font-size: 10px;
     }
 
+    .letter-title {
+
+        font-size: 30px;
+    }
+
+    .letter-content {
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -1446,7 +1481,6 @@ button:hover {
             class="playing-card"
         >
 
-
             <div class="card-face card-back">
 
                 💗
@@ -1535,16 +1569,13 @@ button:hover {
         Hover over each one... ✨
     </p>
 
+
     <div class="things-grid">
 
 
-        <!-- 1 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Your Laugh 😂
@@ -1552,19 +1583,16 @@ button:hover {
 
             <div class="thing-details">
                 Your laugh is honestly contagious.
-                It always makes me smile.
+                It always makes me smile without
+                even trying.
             </div>
 
         </div>
 
 
-        <!-- 2 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Your Personality ✨
@@ -1572,167 +1600,149 @@ button:hover {
 
             <div class="thing-details">
                 I love the way you are.
-                You have your own special vibe.
+                You have your own vibe, and that's
+                what makes you special to me.
             </div>
 
         </div>
 
 
-        <!-- 3 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Your Attention 🫶
             </div>
 
             <div class="thing-details">
-                You notice the little things
-                and always make me feel important.
+                I love how you care about the little
+                things and always make me feel like
+                I matter.
             </div>
 
         </div>
 
 
-        <!-- 4 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Your Eyes 👀
             </div>
 
             <div class="thing-details">
-                There is something about your eyes
-                that I could never get tired of.
+                There is just something about your
+                eyes that I could never get tired of.
             </div>
 
         </div>
 
 
-        <!-- 5 -->
+        <!-- CHANGED: Your Voice -> Your Caring -->
 
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
-                Your Caring 🫶
+                Your Caring 💕
             </div>
 
             <div class="thing-details">
-                I love how caring you are.
-                You always make people feel loved.
+                The way you care about people is
+                something I really admire.
+                It makes you even more special to me.
             </div>
 
         </div>
 
 
-        <!-- 6 -->
+        <!-- CHANGED: Your Soft Heart -> Your Compliments -->
 
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
-                Your Compliments 💌
+                Your Compliments 🥹
             </div>
 
             <div class="thing-details">
-                Your sweet compliments can
-                instantly make my whole day better.
+                Even your smallest compliments
+                can stay in my mind for the
+                whole day.
             </div>
 
         </div>
 
 
-        <!-- 7 -->
+        <!-- CHANGED: Your Cuteness -> Your Beauty -->
 
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
-                Your Beauty ✨
+                Your Beauty 🌷
             </div>
 
             <div class="thing-details">
-                You are beautiful in ways
-                you probably don't even notice.
+                You're beautiful in a way that
+                feels completely natural and
+                impossible to ignore.
             </div>
 
         </div>
 
 
-        <!-- 8 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Your Little Details 🎀
             </div>
 
             <div class="thing-details">
-                The tiny things you do are
-                the things I remember most.
+                The tiny things you do are sometimes
+                the exact things I end up remembering
+                the most.
             </div>
 
         </div>
 
 
-        <!-- 9 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Your Presence 🫂
             </div>
 
             <div class="thing-details">
-                Just having you around
-                somehow makes everything better.
+                Sometimes you don't even have to say
+                anything. Just having you around
+                makes things better.
             </div>
 
         </div>
 
 
-        <!-- 10 -->
-
         <div class="thing-card">
 
-            <div class="thing-heart">
-                ♡
-            </div>
+            <div class="thing-heart">♡</div>
 
             <div class="thing-title">
                 Just You ❤️
             </div>
 
             <div class="thing-details">
-                At the end of the day,
-                I love you simply for being you.
+                At the end of the day, I love you simply
+                for being you. That's my favorite thing
+                about you.
             </div>
 
         </div>
@@ -1741,12 +1751,14 @@ button:hover {
     </div>
 
 
+    <!-- NOW GOES TO THE LETTER PAGE -->
+
     <button
         class="next-btn"
-        onclick="showFinal()"
+        onclick="showLetter()"
         style="margin-top:22px;"
     >
-        That's All... 💗
+        NEXT 💗
     </button>
 
 </div>
@@ -1757,10 +1769,84 @@ button:hover {
 
 <!-- ================================================= -->
 <!--                  PAGE 6                           -->
-<!--                    FINAL                          -->
+<!--                 LOVE LETTER                       -->
 <!-- ================================================= -->
 
 <section id="page6" class="page">
+
+<div class="box letter-box">
+
+    <div class="letter-title">
+        A Little Something For You 💗
+    </div>
+
+
+    <div class="letter-content">
+
+        <div class="letter-paragraph">
+
+            I wanted you to know that I am so incredibly
+            grateful to have met such an amazing person
+            like you. From the moment you came into my
+            life, since the moment I saw u drawing on the
+            table, I knew you were soooo special. And from
+            there, everything changed for the better, and
+            you truly mean the absolute world to me now.
+            I find myself constantly smiling thinking about
+            our moments together, and I honestly wish with
+            all my heart that I will never lose you. You
+            bring so much light and happiness into my days
+            just by being exactly who you are. Please
+            promise me that you won't ever be too harsh
+            on yourself, because to me, you are completely
+            perfect and so much more than enough. You
+            deserve all the love and happiness in the world,
+            and I just wanted to remind you how deeply
+            special and valued you really are to me. 💗
+
+        </div>
+
+
+        <div class="letter-paragraph">
+
+            In these few days when you went offline, I
+            realized the real value of you in my life.
+            It's been just a year since our relationship
+            started, and I feel like it's been so much
+            longer than that. 🫂
+
+        </div>
+
+
+        <div class="letter-paragraph">
+
+            And I just want you to know that I truly love
+            you from the depth of my heart. ❤️
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="next-btn letter-next"
+        onclick="showFinal()"
+    >
+        One Last Thing... ✨
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!--                  PAGE 7                           -->
+<!--                    FINAL                          -->
+<!-- ================================================= -->
+
+<section id="page7" class="page">
 
 <div class="box final-box">
 
@@ -1790,7 +1876,6 @@ button:hover {
 
 <script>
 
-
 /* ================================================= */
 /*                    VARIABLES                      */
 /* ================================================= */
@@ -1800,7 +1885,6 @@ let noClicks = 0;
 let currentCard = 0;
 
 let flipped = false;
-
 
 
 /* ================================================= */
@@ -1830,7 +1914,7 @@ const cards = [
             "TWINS FOREVER",
 
         extra:
-            "You match with me in almost everything — same energy, same chaos, same random thoughts. It honestly feels illegal how similar we are. 😭💗",
+            "You match with me almost everything — even the vibe. Same energy, same chaos, same random thoughts... it honestly feels illegal how similar we are. 😭💗",
 
         rarity:
             "0.0001"
@@ -1844,14 +1928,13 @@ const cards = [
             "U R MY OWN WORLD",
 
         extra:
-            "You are one of those rare souls that make life feel warmer, brighter, and so much more special. 🌎✨",
+            "You are more than just a person I talk to. You are one of those rare souls that make life feel warmer, brighter, and so much more special. 🌎✨",
 
         rarity:
             "0.0000001"
     }
 
 ];
-
 
 
 /* ================================================= */
@@ -1876,7 +1959,6 @@ function showPage(id) {
 }
 
 
-
 /* ================================================= */
 /*                    NO BUTTON                      */
 /* ================================================= */
@@ -1885,10 +1967,8 @@ function nope() {
 
     noClicks++;
 
-
     const btn =
         document.getElementById("noBtn");
-
 
     const scale =
         Math.max(
@@ -1896,10 +1976,8 @@ function nope() {
             1 - noClicks * .15
         );
 
-
     btn.style.transform =
         `scale(${scale})`;
-
 
     const maxX =
         Math.min(
@@ -1907,36 +1985,28 @@ function nope() {
             window.innerWidth / 2 - 80
         );
 
-
     const maxY =
         Math.min(
             180,
             window.innerHeight / 2 - 80
         );
 
-
     const x =
         Math.random() * maxX * 2 - maxX;
-
 
     const y =
         Math.random() * maxY * 2 - maxY;
 
-
     btn.style.position =
         "fixed";
-
 
     btn.style.left =
         `calc(50% + ${x}px)`;
 
-
     btn.style.top =
         `calc(50% + ${y}px)`;
 
-
     createSparkles();
-
 
     if(noClicks >= 3) {
 
@@ -1944,7 +2014,6 @@ function nope() {
             "Really? 😭";
 
     }
-
 
     if(noClicks >= 6) {
 
@@ -1956,7 +2025,6 @@ function nope() {
 }
 
 
-
 /* ================================================= */
 /*                       YES                         */
 /* ================================================= */
@@ -1965,7 +2033,6 @@ function accept() {
 
     createSparkles();
 
-
     setTimeout(() => {
 
         showPage("page2");
@@ -1973,7 +2040,6 @@ function accept() {
     }, 400);
 
 }
-
 
 
 /* ================================================= */
@@ -1987,7 +2053,6 @@ function goToPack() {
 }
 
 
-
 /* ================================================= */
 /*                    OPEN PACK                      */
 /* ================================================= */
@@ -1996,7 +2061,6 @@ function openPack() {
 
     createSparkles();
 
-
     setTimeout(() => {
 
         showPage("page4");
@@ -2004,7 +2068,6 @@ function openPack() {
     }, 350);
 
 }
-
 
 
 /* ================================================= */
@@ -2016,24 +2079,19 @@ function flipCard() {
     if(flipped)
         return;
 
-
     flipped = true;
-
 
     document
         .getElementById("playingCard")
         .classList.add("flipped");
 
-
     document
         .getElementById("nextCardBtn")
         .classList.add("show");
 
-
     createSparkles();
 
 }
-
 
 
 /* ================================================= */
@@ -2045,9 +2103,7 @@ function nextCard() {
     if(!flipped)
         return;
 
-
     currentCard++;
-
 
     if(currentCard >= cards.length) {
 
@@ -2059,58 +2115,60 @@ function nextCard() {
 
     }
 
-
     flipped = false;
-
 
     const card =
         cards[currentCard];
 
-
     document
         .getElementById("playingCard")
         .classList.remove("flipped");
-
 
     document
         .getElementById("counter")
         .innerText =
         `CARD ${currentCard + 1} / ${cards.length}`;
 
-
     document
         .getElementById("cardEmoji")
         .innerText =
         card.emoji;
-
 
     document
         .getElementById("cardMessage")
         .innerText =
         card.message;
 
-
     document
         .getElementById("cardExtra")
         .innerText =
         card.extra;
-
 
     document
         .getElementById("cardRarity")
         .innerText =
         `✦ RARITY: ${card.rarity} ✦`;
 
-
     document
         .getElementById("nextCardBtn")
         .classList.remove("show");
-
 
     createSparkles();
 
 }
 
+
+/* ================================================= */
+/*                LOVE LETTER PAGE                   */
+/* ================================================= */
+
+function showLetter() {
+
+    showPage("page6");
+
+    createSparkles();
+
+}
 
 
 /* ================================================= */
@@ -2119,7 +2177,7 @@ function nextCard() {
 
 function showFinal() {
 
-    showPage("page6");
+    showPage("page7");
 
     createSparkles();
 
@@ -2128,7 +2186,6 @@ function showFinal() {
     createSparkles();
 
 }
-
 
 
 /* ================================================= */
@@ -2147,16 +2204,13 @@ function createSparkles() {
 
     ];
 
-
     for(let i = 0; i < 10; i++) {
 
         const el =
             document.createElement("div");
 
-
         el.className =
             "sparkle";
-
 
         el.innerText =
             symbols[
@@ -2166,23 +2220,18 @@ function createSparkles() {
                 )
             ];
 
-
         el.style.left =
             Math.random() * 100 + "vw";
-
 
         el.style.top =
             "-30px";
 
-
         el.style.animationDuration =
             (2 + Math.random() * 3) + "s";
-
 
         document
             .body
             .appendChild(el);
-
 
         setTimeout(() => {
 
